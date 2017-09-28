@@ -91,7 +91,7 @@ module Marginalia
       def self.line
         Marginalia::Comment.lines_to_ignore ||= /\.rvm|gem|vendor\/|marginalia|rbenv/
         
-        Rails.logger.debug "Marginalia::Comment.lines_to_ignore: #{Marginalia::Comment.lines_to_ignore}"
+        # Rails.logger.debug "Marginalia::Comment.lines_to_ignore: #{Marginalia::Comment.lines_to_ignore}"
         
         last_line = nil
         
@@ -106,7 +106,7 @@ module Marginalia
         #   line !~ Marginalia::Comment.lines_to_ignore
         # end
         if last_line
-          Rails.logger.debug "last_line: #{last_line}"
+          # Rails.logger.debug "last_line: #{last_line}"
           root = if defined?(Rails) && Rails.respond_to?(:root)
             Rails.root.to_s
           elsif defined?(RAILS_ROOT)
